@@ -1,0 +1,9 @@
+{% extends 'Report/base.html'%}
+{% block content %}
+    <h2 class="text-center">You have been logged out</h2>
+    <div class="border-top pt-3 text-center">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Log In Again</a>
+        </small>
+    </div>
+{% endblock content %}

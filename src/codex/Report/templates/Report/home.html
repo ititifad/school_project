@@ -1,0 +1,169 @@
+{% extends "Report/base.html" %}
+
+{% block content %}
+<main role="main" class="container">
+<h3 style='text-align:center'>Filter Homeworks</h3>
+     <form method="GET" action=".">
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="title_contains" placeholder="Title contains..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="id_exact" placeholder="ID exact..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <!--<div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="title_or_author" placeholder="Title or author..." />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>-->
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+          <!--<div class="form-group col-md-2 col-lg-2">
+            <label for="viewCountMin">Minimum View Count</label>
+            <input type="number" min=0 class="form-control" id="viewCountMin" placeholder="0" name="view_count_min">
+          </div>
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="viewCountMax">Maximum View Count</label>
+            <input type="number" min=0 class="form-control" id="viewCountMax" placeholder="10000?" name="view_count_max">
+          </div>
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="publishDateMin">Publish date minimum</label>
+            <input type="date" class="form-control" id="publishDateMin" name="date_min">
+          </div>
+          <div class="form-group col-md-2 col-lg-2">
+            <label for="publishDateMax">Publish date maximum</label>
+            <input type="date" class="form-control" id="publishDateMax" name="date_max">
+          </div>-->
+          <div class="form-group col-md-3">
+            <label for="school">School</label>
+            <select id="school" class="form-control" name="school">
+              <option selected>Choose...</option>
+              {% for sch in schools %}
+              <option value="{{ sch }}">{{ sch }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="region">Region</label>
+            <select id="region" class="form-control" name="region">
+              <option selected>Choose...</option>
+              {% for reg in regions %}
+              <option value="{{ reg }}">{{ reg }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="category">Class</label>
+            <select id="category" class="form-control" name="category">
+              <option selected>Choose...</option>
+              {% for cat in categories %}
+              <option value="{{ cat }}">{{ cat }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="subject">Subject</label>
+            <select id="subject" class="form-control" name="subject">
+              <option selected>Choose...</option>
+              {% for sub in subjects %}
+              <option value="{{ sub }}">{{ sub }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="reviewed" name="reviewed">
+            <label class="form-check-label" for="reviewed">
+              Reviewed
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="notReviewed" name="notReviewed">
+            <label class="form-check-label" for="notReviewed">
+              Not reviewed
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
+      <hr />
+
+      <!--<div class="row">
+        <ul>-->
+        <!--<article class="media content-section bg-dark container-fluid" >
+        <div class="media-body table-responsive">
+        <div class="article-metadata">-->
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+<!--<table class='table table-primary table table-striped table-hover '>-->
+<div class="table-responsive-sm">
+<table class="table table-bordered table-striped mb-0 table-hover">
+  <thead class="thead-dark">
+        <tr>
+                <th>Title</th>
+                <th>User</th>
+                <th>Publish Date</th>
+                <th>Subject</th>
+                <th>Region</th>
+                <th>Download</th>
+        </tr>
+        </thead>
+        <tbody>
+          {% for report in queryset %}
+            <tr>
+                <td>{{ report.title }}</td>
+                <td>
+              <a class='mr-2'>{{ report.author }}</a>
+              </td>
+              <!--{% for cat in report.categories.all %}
+                  {{ cat.name }}
+                {% endfor %}
+              <!--</tr>-->
+              <td>{{ report.publish_date|date:"F d Y" }}</td>
+              {% for sub in report.subjects.all %}
+              <td>{{ sub.name }}</td>
+              {% endfor %}
+              {% for reg in report.regions.all %}
+              <td>{{ reg.name }}</td>
+              {% endfor %}
+              <td>
+              <a href='{{ report.report.url }}' class='btn btn-primary btn-sm' target='_blank'>
+                Download report
+                </a>
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+</div>
+      </div>
+<!--</article>-->
+    </main>
+{% endblock %}
