@@ -1,0 +1,23 @@
+{% extends 'Report/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="d-flex justify-content-center">
+  <div class="col-md-6">
+    <div class="card card-body border-info bg-light">
+  <form method="post" novalidate>
+    <img class="circular justify-content center" src="/media/profile_pics/logo.jpg" width="80" height="80">
+    <fieldset>
+      
+      <legend style="text-align: center; color: rgb(22, 177, 169); font-weight: bold;">Please Send Us a message</legend>
+    {% csrf_token %}
+    {{ form|crispy}}
+    </fieldset>
+    <button class="btn btn-md btn-info">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+
+{% endblock %}

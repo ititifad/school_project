@@ -1,51 +1,102 @@
 {% extends 'Report/base.html' %}
-
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block content %}
 <div class="container">
-    <div class="jumbotron">
-        <h4>This is about Us</h4>
+    <div class="jumbotron bg-info">
+        <h4 style="text-align: center; color: aliceblue;">About Pamoja Twasimama Org</h4>
     </div>
-    <div class="card">
+    <div class="card-group">
+        <div class="card">
+            <div class="card-header text-center bg-info">Our Mission</div>
+            <div class="card-body">
+              <h5 class="card-title">Org Mission</h5>
+              <p class="card-text">To capacitate, advocate, empower, and support Children, youth, women and underprivileged groups by making sure the community access better health, quality education, legal aid and sexual and reproductive services.                .</p>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-header text-center bg-info">Our Vision</div>
+            <div class="card-body">
+              <h5 class="card-title">Org Vision</h5>
+              <p class="card-text">To see an inclusion society which leave no one behind in all aspects of Health, Education, Economic empowerment and Environmental conservation social for sustainable development.
+                .</p>
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="card text-white border-info mb-3 bg-info">
         <div class="card-header">
-            <div class="card-title">
-                {{user.username}}
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illo consequatur, reprehenderit autem tempora minima quo ipsum laborum nihil iure error esse possimus est ad alias natus ea impedit quod.
-                    <div class="card-footer">
-                        <button>submit</button>
+            <div class="card-title text-center">
+                <h3 style="color: aliceblue; font-style: italic;">Who We Are</h3>
+                <div class="card-body text-white">
+                    PAMOJA TWASIMAMA ORGANIZATION (PATWAO) is a Non-profit, Non-Governmental Organization registered under the Non-Governmental Organizations Act N0. 24 of 2002 on 4th December 2018 and awarded a registration certificate No, 00NGO/00009973. PATWAO started its operations in Geita as a small community based organization focusing on providing economic empowerment to marginalized group. The inception of the organization was motivated by the desire to address the issues of poverty, environmental, health care and improved quality education among community member in Geita Region.
+                    <div class="py-3">
+                        <a href="https://pamojatwasimama.org/about-us/" target="_blank" class="btn btn-warning">Learn More</a>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
     <br>
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">
-                {{user.username}}
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illo consequatur, reprehenderit autem tempora minima quo ipsum laborum nihil iure error esse possimus est ad alias natus ea impedit quod.
-                    <div class="card-footer">
-                        <button>submit</button>
-                    </div>
-                </div>
-            </div>
+    <hr>
+
+    <div class="card-group">
+        <div class="container bg-info">
+            <h3 style="color: aliceblue; font-style: italic; text-align: center;">What we do</h3>
+        </div>
+        <div class="card">
+            <div class="card-header text-center bg-info">What we do</div>
+            <div class="card-body">
+              <h5 class="card-title">Health</h5>
+              <p class="card-text">
+                The program seeks to improve better health services to the community through community awareness, training, lobbying and advocating, community sensitization and material support to health centers in Geita Region.
+                This is conducted through using media, face to face dialogue, fumigation and community sensitization programs to the community. We provide health facilities support to health centers especially to the victims of malaria, HIV/ AIDS, TB..</p>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-header text-center bg-info">what we do</div>
+            <div class="card-body">
+              <h5 class="card-title">Education</h5>
+              <p class="card-text">
+                Pamoja Twasimama Organization have confidence in that education is an indispensable means of unlocking and protecting human rights and development since it provides the environment required for security health, liberty, security, economic wellbeing and participation in social and political activities.
+
+                We work with children, youth, communities, wider societies and government so as to insure no one in the society is left behind on getting education. We facilitate and enabling formal and informal and indeed quality education to the community. We are committed to provide equal access to quality and relevant education in the community without leaving any one behind.
+                
+                We improve education infrastructure to Orphans and most Vulnerable Children (OVC), so as to reach our target goals in the community.
+                .</p>
+          </div>
+        </div>
+    </div>
+    <div class="card-group">
+        <div class="card">
+            <div class="card-header text-center bg-info">what we do</div>
+            <div class="card-body">
+              <h5 class="card-title">Economic empowerment</h5>
+              <p class="card-text">we provide entrepreneurship and marketing education; we conduct supportive supervision to our beneficiaries through house visiting’s to the people with disabilities, people living with HIV and youth in small mining’s, rural areas and Orphans Most Vulnerable Children (OVC). We establish small projects which will create income to our beneficiaries and we establish programs that will assist young entrepreneurs to gain access to funding in order to establish and expand their enterprises..</p>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-header text-center bg-info">what we do</div>
+            <div class="card-body">
+              <h5 class="card-title">Environmental conservation</h5>
+              <p class="card-text">This program responds to the Framework Principles on Human Rights and The Environment. The main human rights obligations relating to the enjoyment 2018 of a safe, clean, healthy and sustainable environment, and national laws, policies initiated for environmental conservation.
+
+                The area of operation comprising the immense activities of mining which work hand with hand with environment pollution which leave the inhabitant environment in the community.
+                
+                Because of that we sensitize environmental conservation programs in the community, by providing community awareness on the importance of environmental conservation through planting of trees, using of friendly environmental equipment and practices in their daily economic activities and avoiding deforestation. We capacitate youth to utilize well the resource for sustainable development .
+                .</p>
+          </div>
         </div>
     </div>
     <br>
+    <div class="d-flex justify-content-center">
     <div class="card">
-        <div class="card-header">
-            <div class="card-title">
-                {{user.username}}
-                <div class="card-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere illo consequatur, reprehenderit autem tempora minima quo ipsum laborum nihil iure error esse possimus est ad alias natus ea impedit quod.
-                    <div class="card-footer">
-                        <button>submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="card-body">
+        <a href="{% url 'contact-form' %}" class="btn btn-md btn-info">Send Us a message</a>
     </div>
+    </div>
+    </div>
+
 {% endblock %}

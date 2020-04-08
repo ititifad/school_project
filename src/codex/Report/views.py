@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import *
+from django.contrib import messages
 from django.db.models import Q, Count
-from .forms import ReportForm
+from .forms import ReportForm, ContactForm
 
 def is_valid_queryparam(param):
         return param != '' and param is not None
@@ -98,3 +99,14 @@ def CreateReport(request):
 def about(request):
         return render(request, 'Report/about.html')
         
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            pass  # does nothing, just trigger the validation
+        messages.success(request, f'Thank you, we have received your message')
+        return redirect('/about')
+    else:
+        form = ContactForm()
+    return render(request, 'Report/contact_form.html', {'form': form})
