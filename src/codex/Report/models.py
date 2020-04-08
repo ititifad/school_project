@@ -33,6 +33,8 @@ class School(models.Model):
     SCHOOL_CHOICES = (
         ('waja', 'Waja Schools'),
         ('Emaco', 'Emaco'),
+        ('Pamoja school', 'Patwao Schools')
+        
     )
     name = models.CharField(max_length=20, choices=SCHOOL_CHOICES)
 
