@@ -99,12 +99,16 @@ def CreateReport(request):
 def about(request):
         return render(request, 'Report/about.html')
         
+def news(request):
+        return render(request, 'Report/news.html')
+        
 
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            pass  # does nothing, just trigger the validation
+                form.save()
+                pass  # does nothing, just trigger the validation
         messages.success(request, f'Thank you, we have received your message')
         return redirect('/about')
     else:

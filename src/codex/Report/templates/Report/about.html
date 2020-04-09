@@ -4,6 +4,10 @@
 
 {% block content %}
 <div class="container">
+    <a href="{% url 'contact-form' %}" class="btn btn-md btn-info">Send Us a message</a>
+</div>
+<br>
+<div class="container">
     <div class="jumbotron bg-info">
         <h4 style="text-align: center; color: aliceblue;">About Pamoja Twasimama Org</h4>
     </div>
@@ -92,11 +96,19 @@
     </div>
     <br>
     <div class="d-flex justify-content-center">
-    <div class="card">
-        <div class="card-body">
-        <a href="{% url 'contact-form' %}" class="btn btn-md btn-info">Send Us a message</a>
-    </div>
-    </div>
-    </div>
+        <div class="card border-primary mb-3" style="max-width: 30rem;">
+            <div class="card-header bg-info"></div>
+            <div class="card-body text-primary">
+              <h5 class="card-title">Where we Are</h5>
+              <p class="card-text">P.o.Box 631</p>
+              <p class="card-text">Geita, Tanzania</p>
+              <p class="card-text">Email:info@pamojatwasimama.org</p>
+              <p class="card-text">website:https://pamojatwasimama.org</p>
+            </div>
+          </div>
+
+                
+            </div>
+
 
 {% endblock %}
