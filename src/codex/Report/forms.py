@@ -2,7 +2,7 @@ from django .forms import ModelForm
 from .models import Report
 from django import forms
 
-class ReportForm(ModelForm):
+class ReportForm(forms.ModelForm):
     class Meta:
         model = Report
         fields = ['title','author','schools','categories','subjects','regions','report']
