@@ -107,10 +107,13 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-                form.save()
+                #text = form.cleaned_data.get('name')
                 pass  # does nothing, just trigger the validation
         messages.success(request, f'Thank you, we have received your message')
         return redirect('/about')
     else:
         form = ContactForm()
-    return render(request, 'Report/contact_form.html', {'form': form})
+        args = {
+                'form': form,
+        }
+    return render(request, 'Report/contact_form.html', args)
