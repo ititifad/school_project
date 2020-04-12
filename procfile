@@ -1,1 +1,1 @@
-web: gunicorn codex.wsgi
+web: gunicorn src/codex.wsgi
