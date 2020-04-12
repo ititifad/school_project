@@ -1,2 +1,2 @@
-web: gunicorn codex.wsgi --log-file -
+web: gunicorn codex.wsgi
 
