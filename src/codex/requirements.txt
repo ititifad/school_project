@@ -4,9 +4,11 @@ astroid==2.3.3
 class-registry==2.1.2
 colorama==0.4.3
 distlib==0.3.0
+dj-database-url==0.5.0
 Django==3.0.4
 django-crispy-forms==1.9.0
 django-filter==2.2.0
+django-heroku==0.3.1
 django-widget-tweaks==1.4.8
 filelock==3.0.12
 filters==1.3.2
@@ -24,4 +26,5 @@ six==1.14.0
 sqlparse==0.3.1
 virtualenv==20.0.13
 virtualenvwrapper-win==1.2.6
+whitenoise==5.0.1
 wrapt==1.11.2
